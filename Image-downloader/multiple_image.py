@@ -9,4 +9,4 @@ for img in url:
     x = img.split("/")[-1]
     data = requests.get(img)
     with open(x, "wb") as file:
-        file.write(data.cont
+        file.write(data.content
