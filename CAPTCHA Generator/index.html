@@ -1,0 +1,13 @@
+import random
+import string
+
+captcha = ''.join(random.choices(string.ascii_letters + string.digits, k=5))
+
+print("CAPTCHA:", captcha)
+
+user_input = input("Enter CAPTCHA: ")
+
+if user_input == captcha:
+    print("Verified! You are human ✅")
+else:
+    print("Verification failed ❌")
