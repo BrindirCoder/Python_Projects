@@ -1,0 +1,18 @@
+import requests  #pip install requests
+
+url = input("Enter a website URL: ")
+
+try:
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        print("✅ Website is ONLINE")
+    elif response.status_code == 404:
+        print("❌ Page Not Found (404)")
+    elif response.status_code == 500:
+        print("⚠️ Server Error (500)")
+    else:
+        print(f"ℹ️ Status Code: {response.status_code}")
+
+except requests.exceptions.RequestException:
+    print("🚫 Failed to connect to the website")
